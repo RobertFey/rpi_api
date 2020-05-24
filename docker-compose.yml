@@ -1,0 +1,17 @@
+version: "3"
+services: 
+  rpi_api:
+    image: dan0n/flask-alpine:arm-python3.6
+    container_name: rpi_api 
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - ./app:/app
+      # - /opt/vc/bin:/opt/vc/bin
+      # - /etc/localtime:/etc/localtime:ro
+      # - /etc/timezone:/etc/timezone:ro
+      # - /etc/passwd:/etc/passwd:ro 
+    ports:
+      - "80:80"
+      - "443:443"
+
